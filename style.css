@@ -24,7 +24,7 @@ body header .visualHeader {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 20px;
+  padding: 0 5%;
 }
 
 body header .visualHeader .title {
@@ -95,7 +95,7 @@ body header .visualHeader .menu nav ul li {
 }
 
 body header .visualHeader .menu nav ul li a {
-  color: grey;
+  color: #414141;
   text-decoration: none;
   font-size: 1.5rem;
   padding: 5px;
@@ -196,12 +196,36 @@ body main .eyecatcher .animationContainer .or {
   right: 0;
 }
 
+body main #codingSkills h2 {
+  margin-left: 10%;
+  font-size: 2rem;
+  color: #414141;
+}
+
 body main #codingSkills .grid {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   place-items: center center;
+}
+
+body main #codingSkills .grid a {
+  display: -ms-grid;
+  display: grid;
+  place-items: center center;
+}
+
+body main #codingSkills .grid img {
+  padding: 20px;
+  margin: 10px auto;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 10px black inset;
+          box-shadow: 0 0 10px black inset;
+}
+
+body main #examples {
+  color: #414141;
 }
 
 body main #examples div {
@@ -215,7 +239,19 @@ body main #examples div .container {
 }
 
 body main #examples div img {
-  width: 60vw;
+  width: 80vw;
+}
+
+body main #career {
+  color: #414141;
+}
+
+body main #career table, body main #career th, body main #career td {
+  border: 1px solid black;
+}
+
+body main #aboutMe {
+  color: #414141;
 }
 
 body a:hover, body a:hover h1 {
@@ -242,41 +278,45 @@ body a:hover, body a:hover h1 {
   }
 }
 
-@-webkit-keyframes shine {
-  0% {
-    background-position: 0;
-  }
-  60% {
-    background-position: 180px;
-  }
-  100% {
-    background-position: 180px;
-  }
-}
-
-@keyframes shine {
-  0% {
-    background-position: 0;
-  }
-  60% {
-    background-position: 180px;
-  }
-  100% {
-    background-position: 180px;
-  }
-}
-
 @-webkit-keyframes colorchange {
   0% {
+    color: grey;
+    text-shadow: 0 0 10px red;
+  }
+  20% {
+    color: white;
+    text-shadow: 0 0 10px grey;
+  }
+  80% {
+    color: red;
+    text-shadow: 0 0 10px white;
+  }
+  100% {
+    color: grey;
+    text-shadow: 0 0 10px red;
   }
 }
 
 @keyframes colorchange {
   0% {
+    color: grey;
+    text-shadow: 0 0 10px red;
+  }
+  20% {
+    color: white;
+    text-shadow: 0 0 10px grey;
+  }
+  80% {
+    color: red;
+    text-shadow: 0 0 10px white;
+  }
+  100% {
+    color: grey;
+    text-shadow: 0 0 10px red;
   }
 }
 
-body footer {
+footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -289,11 +329,17 @@ body footer {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-body footer a {
+footer a {
   color: grey;
   font-size: 1.5rem;
   padding: 5px;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 1014px) {
+  body main .eyecatcher .animationContainer .pWrapper p {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (max-width: 760px) {
@@ -311,6 +357,13 @@ body footer a {
   }
   body main #examples div img {
     width: 95%;
+  }
+  body main #career {
+    font-size: 0.8rem;
+    word-wrap: break-word;
+  }
+  body main #career td {
+    word-wrap: break-word;
   }
   body footer {
     -webkit-box-orient: vertical;

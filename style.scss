@@ -5,6 +5,9 @@
 @mixin lightgrey{
     color:grey
 }
+@mixin darkgrey{
+    color:rgb(65, 65, 65);
+}
 @mixin darkBG{
     background-color: rgba(0, 0, 0, 0.7)
 }
@@ -27,7 +30,7 @@ body{
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding:0 20px;
+            padding:0 5%;
             .title{
                 font-size: 3rem;
                 @include lightgrey;
@@ -75,7 +78,7 @@ body{
                         li{
                             list-style-type: none;
                             a{
-                                @include lightgrey;
+                                @include darkgrey();
                                 text-decoration: none;
                                 font-size: 1.5rem;
                                 padding:5px;
@@ -154,24 +157,49 @@ body{
             }
         }
         #codingSkills{
-            
+            h2{
+                margin-left: 10%;
+                font-size: 2rem;
+                @include darkgrey;
+            }
             .grid{
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 place-items: center center;
+                a{
+                  display: grid;
+                  place-items: center center;  
+                }
+                img{
+                    padding: 20px;
+                    margin: 10px auto;
+                    border-radius: 20px;
+                    box-shadow: 0 0 10px black inset;
+                }
+               
                 
             }
         }
         #examples{
+            @include darkgrey;
             div{
                 display: flex;
                 .container{
                     display: block;
                 }
                 img{
-                    width: 60vw;
+                    width: 80vw;
                 }
             }
+        }
+        #career{
+            @include darkgrey;
+            table, th, td {
+                border: 1px solid black;
+              }
+        }
+        #aboutMe{
+            @include darkgrey;
         }
         
     }
@@ -179,6 +207,7 @@ body{
         box-shadow: 0 0 5px red inset;
         color:white !important;
     }
+}
 
 @keyframes curtain{
     0%{
@@ -189,22 +218,27 @@ body{
     }
 }
     
-@keyframes shine{
-  0%{
-    background-position: 0
-  }
-  60%{
-    background-position: 180px
-  } 
-  100%{
-    background-position: 180px
-  }
-}
+
 @keyframes colorchange{
     0%{
-
+        color:grey;
+        text-shadow: 0 0 10px red;
+    }
+    20%{
+        color:white;
+        text-shadow: 0 0 10px grey;
+    }
+    80%{
+        color:red;
+        text-shadow: 0 0 10px white;
+    }
+    100%{
+        color:grey;
+        text-shadow: 0 0 10px red;
     }
 }
+
+    
 
 
 // FOOTER
@@ -220,7 +254,23 @@ body{
             border-radius: 10px;
         }
     }
-}
+
+    @media screen and (max-width:1014px){
+        body{
+            main{
+                .eyecatcher{
+                    .animationContainer{
+                        .pWrapper{
+                            p{
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
 
 @media screen and (max-width:760px){
     body{
@@ -237,6 +287,13 @@ body{
                     img{
                         width: 95%;
                     }
+                }
+            }
+            #career{
+                font-size: 0.8rem;
+                word-wrap: break-word;
+                td{
+                    word-wrap: break-word;
                 }
             }
         }
@@ -261,6 +318,8 @@ body{
                     grid-template-rows: repeat(3, 1fr);
                 }
             }
+            #career{
+                font-size: 0.6rem;
         }
         footer{
             flex-direction: column;
