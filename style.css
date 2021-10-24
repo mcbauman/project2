@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+body {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  background: radial-gradient(black, #464646);
+  color: grey;
+}
+
+body header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+body header .visualHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 20px;
+}
+
+body header .visualHeader .title {
+  font-size: 3rem;
+  color: grey;
+}
+
+body header .visualHeader .title a {
+  text-decoration: none;
+}
+
+body header .visualHeader .title a h1 {
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0;
+}
+
+body header .visualHeader .menu input {
+  display: none;
+}
+
+body header .visualHeader .menu input:checked ~ label .fas {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+body header .visualHeader .menu input:checked ~ nav {
+  opacity: 1;
+}
+
+body header .visualHeader .menu .fas {
+  font-size: 3rem;
+}
+
+body header .visualHeader .menu label .fas {
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+body header .visualHeader .menu nav {
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+  background-color: rgba(211, 211, 211, 0.8);
+  border-radius: 10px;
+  z-index: 10;
+}
+
+body header .visualHeader .menu nav ul {
+  height: 40vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 0;
+}
+
+body header .visualHeader .menu nav ul li {
+  list-style-type: none;
+}
+
+body header .visualHeader .menu nav ul li a {
+  color: grey;
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+body main article {
+  background-color: rgba(211, 211, 211, 0.8);
+  width: 90%;
+  margin: 10px auto;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+body main article img {
+  width: 30%;
+}
+
+body main .eyecatcher {
+  height: 60vw;
+  width: 90%;
+  margin: 20px auto;
+  background-image: url("./background.jpeg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: black;
+}
+
+body main .eyecatcher .animationContainer {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 40% 30%;
+      grid-template-columns: 30% 40% 30%;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "ol m or";
+  position: relative;
+}
+
+body main .eyecatcher .animationContainer .pWrapper {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: m;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main .eyecatcher .animationContainer .pWrapper p {
+  margin-right: 7%;
+  position: relative;
+  left: 60%;
+  font-size: 4.2rem;
+  position: absolute;
+  -webkit-animation-name: colorchange;
+          animation-name: colorchange;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+body main .eyecatcher .animationContainer .ol, body main .eyecatcher .animationContainer .or {
+  background: -webkit-gradient(linear, right top, left top, from(black), color-stop(grey), color-stop(black), color-stop(grey), color-stop(black), color-stop(grey), color-stop(black), color-stop(grey), color-stop(black), color-stop(grey), color-stop(black), to(grey));
+  background: linear-gradient(to left, black, grey, black, grey, black, grey, black, grey, black, grey, black, grey);
+  position: absolute;
+  height: 100%;
+  width: 170%;
+  -webkit-animation-name: curtain;
+          animation-name: curtain;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+body main .eyecatcher .animationContainer .ol {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: ol;
+}
+
+body main .eyecatcher .animationContainer .or {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: or;
+  right: 0;
+}
+
+body main #codingSkills .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  place-items: center center;
+}
+
+body main #examples div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main #examples div .container {
+  display: block;
+}
+
+body main #examples div img {
+  width: 60vw;
+}
+
+body a:hover, body a:hover h1 {
+  -webkit-box-shadow: 0 0 5px red inset;
+          box-shadow: 0 0 5px red inset;
+  color: white !important;
+}
+
+@-webkit-keyframes curtain {
+  0% {
+    width: 180%;
+  }
+  100% {
+    width: 18%;
+  }
+}
+
+@keyframes curtain {
+  0% {
+    width: 180%;
+  }
+  100% {
+    width: 18%;
+  }
+}
+
+@-webkit-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+}
+
+@-webkit-keyframes colorchange {
+  0% {
+  }
+}
+
+@keyframes colorchange {
+  0% {
+  }
+}
+
+body footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+body footer a {
+  color: grey;
+  font-size: 1.5rem;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 760px) {
+  body main #codingSkills .grid {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: (1fr)[3];
+        grid-template-rows: repeat(3, 1fr);
+  }
+  body main #examples div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body main #examples div img {
+    width: 95%;
+  }
+  body footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body header .visualHeader .title {
+    font-size: 1rem;
+  }
+  body main #codingSkills .grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: (1fr)[3];
+        grid-template-rows: repeat(3, 1fr);
+  }
+  body footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body footer a {
+    font-size: 1rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
